@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit_pages import Page, Section, add_page_title, show_pages
+from st-pages import Page, Section, add_page_title, show_pages
 
 st.set_page_config(
     page_title="Hello",
