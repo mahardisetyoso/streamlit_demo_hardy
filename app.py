@@ -1,6 +1,6 @@
 import streamlit as st
 
-    with st.echo("below"):
+with st.echo("below"):
     from st_pages import Page, Section, add_page_title, show_pages
 
     st.set_page_config(
