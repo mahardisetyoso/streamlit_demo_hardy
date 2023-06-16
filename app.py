@@ -1,10 +1,9 @@
 import streamlit as st
-from st-pages import Page, Section, add_page_title, show_pages
 
-st.set_page_config(
-    page_title="Hello",
-    page_icon="👋",
-)
+from st_pages import Page, Section, add_page_title, show_pages
+
+add_page_title(layout="wide")
+
 
 st.write("# Welcome to Streamlit! 👋")
 
