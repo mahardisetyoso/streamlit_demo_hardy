@@ -3,12 +3,14 @@ import pandas as pd
 import geopandas as gpd
 import seaborn as sns
 import pydeck as pdk
+import requests
+from io import BytesIO
 from math import floor
 sns.set_theme(style="whitegrid")
 
-xls = pd.ExcelFile(r"C:\Users\Mahardi\OneDrive\Documents\python_project\Streamlit Simple Dashboard\data\Macroeconomy Data for Territory_.xlsx")
-
-df1 = pd.read_excel(xls,'City Level Data')
+url = 'https://github.com/mahardisetyoso/streamlit_demo_hardy/raw/main/data/Macroeconomy%20Data%20for%20Territory_.xlsx'
+xlsx = requests.get(url).content
+df1 = pd.read_excel(BytesIO(xlsx),'City Level Data')
 df1_compile = df1[['Provinsi','Kab/Kota','Kec','Desa','Kel','Population','Regional GDP (IDR Bil)']]
 
 df2_1 = pd.crosstab(index=df1_compile['Provinsi'],
