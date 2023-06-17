@@ -25,7 +25,7 @@ df2_2 = pd.crosstab(index=df1_compile['Provinsi'],
 
 df3 = pd.merge(df2_1,df2_2, on="Provinsi", how="left").sort_values(by='GDP Province in Billion',ascending=False)
 
-file = r"C:\Users\Mahardi\OneDrive\Documents\python_project\Streamlit Simple Dashboard\data\indonesia.geojson"
+file = 'https://raw.githubusercontent.com/mahardisetyoso/streamlit_demo_hardy/main/data/indonesia.geojson'
 
 gdf = gpd.read_file(file)
 gdf['Provinsi']=gdf['state'].str.upper()
